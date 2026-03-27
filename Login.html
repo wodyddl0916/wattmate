@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와트메이트</title>
+    <link rel="icon" href="favicon.svg" />
+    <style>
+        /* 1. 전체 기본 설정 - 웹페이지 전체에 공통으로 적용되는 폰트와 박스 크기 계산 방식 정의 */
+        * {
+            box-sizing: border-box;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        }
+
+        /* 2. 전체 화면 배치(Body Layout) */
+        body {
+            margin: 0;
+            padding: 0;
+            padding-top: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #ffffff;
+        }
+
+        /* 3. 로그인 폼 전체 담당 */
+        .login-container {
+            width: 100%;
+            max-width: 440px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 4. 상단 테스트 및 로고 영역 */
+        .header-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #333333;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 28px; 
+            height: 28px;
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: #000000;
+            margin: 0;
+            letter-spacing: -1.5px;
+        }
+
+        /* 5. 입력창 영역 */
+        .form-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 17px 20px;
+            font-size: 17px;
+            border: 1px solid #555555;
+            border-radius: 20px;
+            background-color: #FAFAFA;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-field::placeholder {
+            color: #777777;
+        }
+
+        /* 6. 로그인 버튼 */
+        .login-button {
+            width: 100%;
+            padding: 18px 20px;
+            margin-top: 1px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #222222;
+            background-color: #B4C6B6;
+            border: 1px solid #555555;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .login-button:hover {
+            background-color: #a0b3a2;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="header-section">
+            <div class="subtitle">에너지가 가치가 되는 순간</div>
+            <div class="title-wrapper">
+                <img src="favicon.svg" class="logo-icon" alt="와트메이트 로고">
+                <h1 class="main-title">와트메이트</h1>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <input type="text" id="adminId" class="input-field" placeholder="아이디">
+            <input type="password" id="adminPw" class="input-field" placeholder="비밀번호">
+            <button id="loginBtn" class="login-button">와트메이트 로그인</button>
+        </div>
+    </div>
+
+    <script>
+        // 로그인 버튼을 찾아서 클릭 이벤트를 연결합니다.
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            // 입력창에 적힌 아이디와 비밀번호 값을 가져옵니다.
+            const inputId = document.getElementById('adminId').value;
+            const inputPw = document.getElementById('adminPw').value;
+
+            // 아이디가 'user'이고 비밀번호가 '1234'인지 확인합니다.
+            if (inputId === 'user' && inputPw === '1234') {
+                alert('관리자님 환영합니다!');
+                
+                // 성공 시 넘어갈 다음 페이지 파일명을 적어주세요.
+                // 예: 같은 폴더에 있는 next_page.html로 이동
+                window.location.href = 'Main.html'; 
+                
+            } else {
+                // 틀렸을 경우 경고창을 띄웁니다.
+                alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+            }
+        });
+    </script>
+</body>
+</html>

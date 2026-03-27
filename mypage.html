@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>와트메이트</title>
+    <style>
+        /* [공통 스타일] */
+        * { box-sizing: border-box; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+        body { margin: 0; background-color: #f5f7fa; color: #333; line-height: 1.6; }
+        
+        /* [헤더] */
+        header { 
+            background: #ffffff; padding: 1.5rem 3rem; display: flex; 
+            justify-content: space-between; align-items: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        header h2 { margin: 0; color: #000000; font-weight: 800; font-size: 28px; letter-spacing: -1px; }
+        .nav-links a { font-size: 18px; color: #555; text-decoration: none; margin-left: 25px; }
+        .nav-links a:hover { color: #000; font-weight: bold; }
+        
+        /* [메인 컨테이너 및 그리드] */
+        .container { max-width: 1400px; margin: 60px auto; padding: 0 2rem; }
+        .page-title { font-size: 40px; font-weight: 900; margin-bottom: 40px; color: #222; }
+        
+        /* 그리드 및 카드 확대 */
+        .mypage-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 2.5rem; align-items: start; }
+        
+        .card { 
+            background: white; 
+            padding: 3.5rem; 
+            border-radius: 30px; 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04); 
+            border: 1px solid #eaeaea;
+            min-height: 600px; /* 세로 길이 확보 */
+        }
+        
+        /* 카드 제목 밑줄 제거 */
+        .card h3 { 
+            font-size: 32px; 
+            color: #222; 
+            margin-top: 0; 
+            margin-bottom: 35px; 
+            font-weight: 800; 
+            padding-bottom: 15px; 
+            display: inline-block; 
+        }
+        
+        /* [정보 행 디자인 확대 - 가로선 제거] */
+        .info-row { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 25px 0; 
+        }
+        .info-label { color: #777; font-weight: 600; font-size: 24px; }
+        .info-value { color: #222; font-weight: 800; font-size: 24px; }
+        
+        /* [프로필 영역 확대] */
+        .profile-section { text-align: center; margin-bottom: 40px; }
+        .profile-img-circle { 
+            width: 150px; 
+            height: 150px; 
+            background-color: #f0f4f1; 
+            border-radius: 50%; 
+            margin: 0 auto 25px auto; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 70px; 
+        }
+        .user-name { font-size: 36px; font-weight: 900; color: #111; }
+        .user-role { color: #888; font-size: 20px; margin-top: 10px; font-weight: 500; }
+        
+        /* [버튼 디자인 확대] */
+        .btn { 
+            display: inline-block; 
+            padding: 22px 30px; 
+            background-color: #B4C6B6; 
+            color: #222; 
+            font-weight: 800; 
+            text-decoration: none; 
+            border-radius: 18px; 
+            text-align: center; 
+            cursor: pointer; 
+            border: none; 
+            width: 100%; 
+            margin-top: 30px; 
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            font-size: 22px; 
+        }
+        .btn:hover { background-color: #a0b3a2; transform: translateY(-2px); }
+        .btn-secondary { background-color: #f5f5f5; color: #555; margin-top: 25px; }
+
+        /* 오른쪽 카드 그룹 간격 */
+        .right-column { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="favicon.svg" alt="와트메이트 로고" style="width: 40px; height: 40px;">
+            <h2>와트메이트</h2>
+        </div>
+        <div class="nav-links">
+            <a href="Main.html">대시보드</a>
+            <a href="#" style="font-weight: 900; color: #B4C6B6; padding-bottom: 5px;">내 정보</a>
+            <a href="Login.html" onclick="alert('안전하게 로그아웃 되었습니다.');">로그아웃</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-title">내 정보 관리</div>
+        
+        <div class="mypage-grid">
+            <div class="card">
+                <h3>기본 프로필</h3>
+                <div class="profile-section">
+                    <div class="profile-img-circle">👤</div>
+                    <div class="user-name">OOO</div>
+                    <div class="user-role">일반 회원</div>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">거주 지역</span>
+                    <span class="info-value">광주광역시</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">주거 형태</span>
+                    <span class="info-value">1인 가구</span>
+                </div>
+                <button class="btn">프로필 수정하기</button>
+            </div>
+
+            <div class="right-column">
+                
+                <div class="card" style="min-height: auto;">
+                    <h3>나의 에너지 목표 설정</h3>
+                    <div class="info-row">
+                        <span class="info-label">이번 달 목표 전력 사용량</span>
+                        <span class="info-value">150 kWh</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">LSTM 예측 대비 절감 목표</span>
+                        <span class="info-value" style="color: #e53935;">-10%</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">푸시 알림 수신</span>
+                        <span class="info-value">켜짐</span>
+                    </div>
+                    <button class="btn btn-secondary">목표 재설정</button>
+                </div>
+
+                <div class="card" style="min-height: auto;">
+                    <h3>리워드 및 활동 내역</h3>
+                    <div class="info-row">
+                        <span class="info-label">누적 와트 포인트</span>
+                        <span class="info-value" style="color: #4CAF50; font-size: 32px;">1,500 P</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">성공한 챌린지 횟수</span>
+                        <span class="info-value">총 4회</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">현재 해당 가구 랭킹 등급</span>
+                        <span class="info-value" style="color: #FFC107;">B등급 (상위 30%)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
