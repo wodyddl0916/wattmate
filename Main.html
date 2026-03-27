@@ -9,79 +9,76 @@
         * { box-sizing: border-box; font-family: 'Pretendard', -apple-system, sans-serif; }
         body { margin: 0; background-color: #f5f7fa; color: #333; line-height: 1.6; }
         
-        /* [헤더 및 드롭다운] */
+        /* [헤더 및 드롭다운] - 크기 및 패딩 축소 */
         header { 
-            background: #ffffff; padding: 1.5rem 3rem; display: flex; 
+            background: #ffffff; padding: 1rem 2rem; display: flex; 
             justify-content: space-between; align-items: center; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; top: 0; width: 100%; z-index: 1000;
         }
-        header h2 { margin: 0; color: #000000; font-weight: 800; font-size: 28px; letter-spacing: -1px; }
+        header h2 { margin: 0; color: #000000; font-weight: 800; font-size: 22px; letter-spacing: -1px; }
         
         .profile-wrapper { position: relative; display: inline-block; }
-        .profile-icon { cursor: pointer; padding: 10px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.2s; }
+        .profile-icon { cursor: pointer; padding: 8px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.2s; }
         .profile-icon:hover { background-color: #f0f0f0; }
-        .dropdown-menu { display: none; position: absolute; right: 0; top: 55px; background-color: white; min-width: 160px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; border: 1px solid #eaeaea; z-index: 1001; overflow: hidden; }
+        .dropdown-menu { display: none; position: absolute; right: 0; top: 48px; background-color: white; min-width: 140px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 10px; border: 1px solid #eaeaea; z-index: 1001; overflow: hidden; }
         .dropdown-menu.show { display: block; }
-        .dropdown-menu a { display: block; padding: 16px 24px; text-decoration: none; color: #333; font-size: 18px; transition: 0.2s; }
+        .dropdown-menu a { display: block; padding: 12px 20px; text-decoration: none; color: #333; font-size: 15px; transition: 0.2s; }
         .dropdown-menu a:hover { background-color: #f5f7fa; color: #B4C6B6; font-weight: 700; }
 
-        /* [레이아웃 컨테이너] */
-        .container { max-width: 1400px; margin: 120px auto 4rem auto; padding: 0 2rem; }
+        /* [레이아웃 컨테이너] - 넓이 및 여백 축소 */
+        .container { max-width: 1100px; margin: 90px auto 3rem auto; padding: 0 2rem; }
         
-        /* [공통 카드 스타일] */
-        .card { background: white; padding: 2.5rem; border-radius: 30px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); border: 1px solid #eaeaea; }
-        .card h3 { font-size: 24px; color: #222; margin-top: 0; margin-bottom: 30px; font-weight: 800; display: flex; align-items: center; gap: 12px; }
+        /* [공통 카드 스타일] - 패딩 및 둥글기 축소 */
+        .card { background: white; padding: 1.8rem; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); border: 1px solid #eaeaea; }
+        .card h3 { font-size: 18px; color: #222; margin-top: 0; margin-bottom: 20px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
 
-        /* 1. 상단 배너 */
-        .banner { background: linear-gradient(135deg, #B4C6B6 0%, #8a9e8c 100%); border-radius: 30px; padding: 4rem 3rem; color: white; margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(180, 198, 182, 0.3); }
-        .banner h1 { margin: 0 0 15px 0; font-size: 40px; font-weight: 900; }
-        .banner p { margin: 0; font-size: 22px; opacity: 0.95; }
+        /* 1. 상단 배너 - 폰트 및 여백 축소 */
+        .banner { background: linear-gradient(135deg, #B4C6B6 0%, #8a9e8c 100%); border-radius: 20px; padding: 2.5rem 2.5rem; color: white; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(180, 198, 182, 0.3); }
+        .banner h1 { margin: 0 0 10px 0; font-size: 28px; font-weight: 900; }
+        .banner p { margin: 0; font-size: 16px; opacity: 0.95; }
 
-        /* 2. 인사이트 & 랭킹 섹션 (세로 확대) */
-        .main-grid { display: grid; grid-template-columns: 1.8fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
-        .main-grid .card { min-height: 550px; } /* 세로 크기 고정 */
-        /* 제목 밑줄 제거 */
-        .main-grid h3 { font-size: 32px; padding-bottom: 15px; display: inline-block; }
+        /* 2. 인사이트 & 랭킹 섹션 - 세로 높이 및 폰트 축소 */
+        .main-grid { display: grid; grid-template-columns: 1.8fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+        .main-grid .card { min-height: 400px; } 
+        .main-grid h3 { font-size: 22px; padding-bottom: 10px; display: inline-block; }
 
-        /* 리스트 스타일 확대 */
+        /* 리스트 스타일 축소 */
         .tip-list { list-style: none; padding: 0; margin: 0; }
-        /* 리스트 밑줄 제거 */
-        .tip-list li { padding: 30px; transition: 0.2s; cursor: pointer; border-radius: 20px; }
+        .tip-list li { padding: 20px; transition: 0.2s; cursor: pointer; border-radius: 15px; }
         .tip-list li:hover { background-color: #f9fbf9; }
-        .tip-title { font-weight: 800; color: #333; margin-bottom: 15px; display: block; font-size: 28px; }
-        .tip-desc { font-size: 22px; color: #666; line-height: 1.6; }
+        .tip-title { font-weight: 800; color: #333; margin-bottom: 10px; display: block; font-size: 18px; }
+        .tip-desc { font-size: 15px; color: #666; line-height: 1.6; }
 
         .hof-list { list-style: none; padding: 0; margin: 0; }
-        /* 리스트 점선 밑줄 제거 */
-        .hof-list li { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; }
-        .hof-rank { font-weight: 900; color: #B4C6B6; width: 45px; font-size: 32px; }
-        .hof-name { font-weight: 700; color: #444; flex-grow: 1; margin-left: 20px; font-size: 26px; }
-        .hof-score { font-size: 22px; color: #666; background: #f5f5f5; padding: 10px 20px; border-radius: 30px; font-weight: 700; }
+        .hof-list li { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .hof-rank { font-weight: 900; color: #B4C6B6; width: 30px; font-size: 22px; }
+        .hof-name { font-weight: 700; color: #444; flex-grow: 1; margin-left: 15px; font-size: 17px; }
+        .hof-score { font-size: 15px; color: #666; background: #f5f5f5; padding: 8px 15px; border-radius: 20px; font-weight: 700; }
 
-        /* 3. 요약 카드 그리드 확대 */
-        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2.5rem; }
-        .summary-grid .card { padding: 2.5rem; min-height: 220px; display: flex; flex-direction: column; justify-content: center; }
-        .summary-grid .value { font-size: 42px; font-weight: 900; color: #222; margin-top: 15px; }
-        .summary-grid .unit { font-size: 22px; color: #888; font-weight: 600; margin-left: 8px; }
+        /* 3. 요약 카드 그리드 축소 */
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .summary-grid .card { padding: 1.8rem; min-height: 150px; display: flex; flex-direction: column; justify-content: center; }
+        .summary-grid .value { font-size: 32px; font-weight: 900; color: #222; margin-top: 10px; }
+        .summary-grid .unit { font-size: 16px; color: #888; font-weight: 600; margin-left: 6px; }
 
-        /* 4. 차트 섹션 확대 */
+        /* 4. 차트 섹션 축소 */
         .chart-section { margin-bottom: 2rem; }
-        .chart-section h3 { font-size: 32px; }
-        .chart-placeholder { width: 100%; height: 450px; background: #FAFAFA; border: 1px dashed #cccccc; border-radius: 24px; display: flex; align-items: center; justify-content: center; color: #999; margin-top: 25px; font-size: 24px; }
-        .ai-tip { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 2rem; border-radius: 20px; margin-top: 2rem; font-size: 22px; color: #166534; line-height: 1.6; }
-        .ai-tip strong { font-weight: 800; font-size: 24px; }
+        .chart-section h3 { font-size: 22px; }
+        .chart-placeholder { width: 100%; height: 300px; background: #FAFAFA; border: 1px dashed #cccccc; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #999; margin-top: 20px; font-size: 16px; }
+        .ai-tip { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.5rem; border-radius: 15px; margin-top: 1.5rem; font-size: 15px; color: #166534; line-height: 1.6; }
+        .ai-tip strong { font-weight: 800; font-size: 16px; }
     </style>
 </head>
 
 <body>
     <header>
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <img src="favicon.svg" alt="와트메이트 로고" style="width: 36px; height: 36px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="favicon.svg" alt="와트메이트 로고" style="width: 28px; height: 28px;">
             <h2>와트메이트</h2>
         </div>
         <div class="profile-wrapper">
             <div class="profile-icon" id="profileIcon">
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
                 </svg>
             </div>
@@ -98,7 +95,7 @@
                 <h1>지구를 구하는 작은 습관 🌍</h1>
                 <p>이번 달 와트메이트 사용자들이 절약한 총 전력량은 <strong>~ Wh</strong> 입니다.</p>
             </div>
-            <div style="font-size: 60px; opacity: 0.8;">⚡</div>
+            <div style="font-size: 40px; opacity: 0.8;">⚡</div>
         </div>
 
         <div class="main-grid">
@@ -118,7 +115,7 @@
 
             <div class="card">
                 <h3>🏆 이번 달 명예의 전당</h3>
-                <p style="font-size: 18px; color: #888; margin-top: -15px; margin-bottom: 25px;">가장 많은 에너지를 절약한 이웃들입니다.</p>
+                <p style="font-size: 14px; color: #888; margin-top: -10px; margin-bottom: 20px;">가장 많은 에너지를 절약한 이웃들입니다.</p>
                 <ul class="hof-list">
                     <li><span class="hof-rank">1</span><span class="hof-name">김성진</span><span class="hof-score">-18% 절감</span></li>
                     <li><span class="hof-rank">2</span><span class="hof-name">박재용</span><span class="hof-score">-15% 절감</span></li>
@@ -131,15 +128,15 @@
 
         <section class="summary-grid">
             <div class="card">
-                <h3 style="color:#666; font-weight:700; font-size: 22px;">실시간 전력 사용량</h3>
+                <h3 style="color:#666; font-weight:700; font-size: 16px;">실시간 전력 사용량</h3>
                 <div class="value">0.45<span class="unit">kWh</span></div>
             </div>
             <div class="card">
-                <h3 style="color:#666; font-weight:700; font-size: 22px;">이번 달 예상 요금</h3>
+                <h3 style="color:#666; font-weight:700; font-size: 16px;">이번 달 예상 요금</h3>
                 <div class="value">38,200<span class="unit">원</span></div>
             </div>
             <div class="card">
-                <h3 style="color:#666; font-weight:700; font-size: 22px;">보유 리워드 포인트</h3>
+                <h3 style="color:#666; font-weight:700; font-size: 16px;">보유 리워드 포인트</h3>
                 <div class="value" style="color: #4CAF50;">1,500<span class="unit">P</span></div>
             </div>
         </section>
